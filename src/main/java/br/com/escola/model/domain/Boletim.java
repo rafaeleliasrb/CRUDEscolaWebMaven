@@ -11,8 +11,7 @@ public class Boletim {
 	private List<Nota> notas = new ArrayList<>();
 	
 	public List<Nota> getNotas() {
-		Collections.unmodifiableList(notas);
-		return notas;
+		return Collections.unmodifiableList(notas);
 	}
 	
 	public void adicionarNota(Nota nota) {

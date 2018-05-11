@@ -9,6 +9,13 @@ public class Aluno extends Pessoa {
 	private boolean isMatriculado;
 	private Boletim boletim;
 	protected SituacaoDoAluno situacao;
+	
+	//Para fins didaticos a media vai ser setada nessa variavel
+	private double media;
+	
+	public Aluno(double media) {
+		this.media = media;
+	}
 
 	public Aluno() {
 		situacao = new Matriculado();
@@ -73,5 +80,9 @@ public class Aluno extends Pessoa {
 	
 	public double getMediaFinal(Disciplina disciplina) {
 		return situacao.calculaMediaFinal(this, disciplina);
+	}
+	
+	public double getMedia() {
+		return media;
 	}
 }
