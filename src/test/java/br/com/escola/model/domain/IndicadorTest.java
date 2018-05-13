@@ -35,13 +35,7 @@ public class IndicadorTest {
 	
 	@Test
 	public void testarIndicadorCorretoPeloTipoDaTurma() {
-		IndicadorTurma indicadorTurma;
-		if(turmaRegular.getTipo().equals(TipoTurma.REGULAR)) {
-			indicadorTurma = new IndicadorTurmaRegular();
-		}
-		else {
-			indicadorTurma = new IndicadorTurmaEspecial();
-		}
+		IndicadorTurma indicadorTurma = IndicadorFactory.getIndicador(turmaRegular);
 		
 		StatusIndicador statusIndicador = indicadorTurma.calcula(turmaRegular);
 		
