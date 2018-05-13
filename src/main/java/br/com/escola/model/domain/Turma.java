@@ -7,8 +7,15 @@ import java.util.List;
 public class Turma {
 
 	private List<Aluno> alunos;
+	private TipoTurma tipo;
 	
 	public Turma() {
+		tipo = TipoTurma.REGULAR;
+		alunos = new ArrayList<>();
+	}
+	
+	public Turma(TipoTurma tipo) {
+		this.tipo = tipo;
 		alunos = new ArrayList<>();
 	}
 	
@@ -32,5 +39,9 @@ public class Turma {
 				.mapToDouble(Aluno::getMedia)
 				.filter(media -> media >= notaMinima)
 				.count()/(double)alunos.size())*100.0;
+	}
+	
+	public TipoTurma getTipo() {
+		return tipo;
 	}
 }
